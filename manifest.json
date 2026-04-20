@@ -1,19 +1,48 @@
 {
+  "client": "LCPERU",
+  "dataset_count": 3,
   "datasets": [
     {
-      "csv_name": "LCPERU - Ayacucho.csv",
+      "dataset_id": "LCPERU - Ayacucho",
+      "source_file": "LCPERU - Ayacucho.csv",
+      "client": "LCPERU",
+      "district": "",
+      "location": "Ayacucho",
+      "display_name": "LCPERU · Ayacucho",
       "detailed_json": "./json/detailed_LCPERU - Ayacucho.json",
-      "ranking_json": "./json/ranking_LCPERU - Ayacucho.json"
+      "ranking_json": "./json/ranking_LCPERU - Ayacucho.json",
+      "total_samples": 41,
+      "pass_count": 3,
+      "fail_count": 38,
+      "avg_score": 39.88
     },
     {
-      "csv_name": "LCPERU - Miraflores.csv",
+      "dataset_id": "LCPERU - Miraflores",
+      "source_file": "LCPERU - Miraflores.csv",
+      "client": "LCPERU",
+      "district": "",
+      "location": "Miraflores",
+      "display_name": "LCPERU · Miraflores",
       "detailed_json": "./json/detailed_LCPERU - Miraflores.json",
-      "ranking_json": "./json/ranking_LCPERU - Miraflores.json"
+      "ranking_json": "./json/ranking_LCPERU - Miraflores.json",
+      "total_samples": 99,
+      "pass_count": 3,
+      "fail_count": 96,
+      "avg_score": 38.23
     },
     {
-      "csv_name": "LCPERU - Misti.csv",
+      "dataset_id": "LCPERU - Misti",
+      "source_file": "LCPERU - Misti.csv",
+      "client": "LCPERU",
+      "district": "",
+      "location": "Misti",
+      "display_name": "LCPERU · Misti",
       "detailed_json": "./json/detailed_LCPERU - Misti.json",
-      "ranking_json": "./json/ranking_LCPERU - Misti.json"
+      "ranking_json": "./json/ranking_LCPERU - Misti.json",
+      "total_samples": 104,
+      "pass_count": 11,
+      "fail_count": 93,
+      "avg_score": 47.74
     }
   ]
 }
