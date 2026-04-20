@@ -1,0 +1,19 @@
+{
+  "datasets": [
+    {
+      "csv_name": "LCPERU - Ayacucho.csv",
+      "detailed_json": "./json/detailed_LCPERU - Ayacucho.json",
+      "ranking_json": "./json/ranking_LCPERU - Ayacucho.json"
+    },
+    {
+      "csv_name": "LCPERU - Miraflores.csv",
+      "detailed_json": "./json/detailed_LCPERU - Miraflores.json",
+      "ranking_json": "./json/ranking_LCPERU - Miraflores.json"
+    },
+    {
+      "csv_name": "LCPERU - Misti.csv",
+      "detailed_json": "./json/detailed_LCPERU - Misti.json",
+      "ranking_json": "./json/ranking_LCPERU - Misti.json"
+    }
+  ]
+}
