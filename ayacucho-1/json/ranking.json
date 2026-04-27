@@ -1,0 +1,21 @@
+{
+  "csv_name": "LCPERU - Ayacucho (1).csv",
+  "total_source_images": 1,
+  "total_pizzas_detected": 1,
+  "average_score": 35.0,
+  "ranking": [
+    {
+      "rank": 1,
+      "crop_image": "crops/LCPERU - Ayacucho (1)_img_0000_crop_01.jpg",
+      "score": 35,
+      "veredicto": "FAIL",
+      "burbuja": "si",
+      "grasa": "si",
+      "bordes_sucios": "si",
+      "horneado": "bajo",
+      "distribucion": "media",
+      "fecha": "2026-04-20",
+      "locacion": "Ayacucho (1)"
+    }
+  ]
+}
