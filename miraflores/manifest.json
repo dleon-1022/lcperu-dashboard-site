@@ -1,7 +1,7 @@
 {
   "datasets": [
     {
-      "csv_name": "LCPERU - Ayacucho (1).csv",
+      "csv_name": "LCPERU - Miraflores.csv",
       "detailed_json": "./json/detailed.json",
       "ranking_json": "./json/ranking.json"
     }
