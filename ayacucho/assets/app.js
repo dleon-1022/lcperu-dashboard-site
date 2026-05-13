@@ -267,6 +267,19 @@ function highlightSeries(values, baseColor, highlightColor) {
   return values.map((value) => (value === maxValue ? highlightColor : baseColor));
 }
 
+function buildDistributionCounts(detailedData) {
+  return detailedData.reduce(
+    (counts, row) => {
+      const value = String(row.distribucion || "").trim().toLowerCase();
+      if (value === "aceptable" || value === "media" || value === "deficiente") {
+        counts[value] += 1;
+      }
+      return counts;
+    },
+    { media: 0, aceptable: 0, deficiente: 0 },
+  );
+}
+
 function buildMetrics(detailedData) {
   const total = detailedData.length;
   const pass = detailedData.filter((x) => x.veredicto === "PASS").length;
@@ -275,6 +288,7 @@ function buildMetrics(detailedData) {
   const grasa = detailedData.filter((x) => x.grasa === "si").length;
   const bordes = detailedData.filter((x) => x.bordes_sucios === "si").length;
   const horneadoCritico = detailedData.filter((x) => (x.horneado || "").toLowerCase() !== "correcto").length;
+  const distribucionCounts = buildDistributionCounts(detailedData);
   const timeline = buildIncidentTimeline(detailedData);
 
   return {
@@ -285,6 +299,7 @@ function buildMetrics(detailedData) {
     grasa,
     bordes,
     horneadoCritico,
+    distribucionCounts,
     dayIncidentLabels: timeline.dayLabels,
     dayIncidentValues: timeline.dayValues,
     dayHighlights: timeline.dayHighlights,
@@ -309,7 +324,7 @@ function renderSummary(rankingData, metrics) {
 
 function renderBulletChart(rankingData) {
   const averageScore = Number(rankingData.average_score ?? 0);
-  const targetScore = 75;
+  const targetScore = 90;
   const statusLabel = document.getElementById("bulletStatusLabel");
 
   document.getElementById("bulletBar").style.width = `${Math.max(0, Math.min(100, averageScore))}%`;
@@ -481,6 +496,30 @@ function renderIncidentRings(metrics) {
   setRing("ring-grasa", metrics.grasa, metrics.total, "grasaPct", "grasaCount");
   setRing("ring-bordes", metrics.bordes, metrics.total, "bordesPct", "bordesCount");
   setRing("ring-horneado", metrics.horneadoCritico, metrics.total, "horneadoPct", "horneadoCount");
+  renderDistributionChart(metrics);
+}
+
+function renderDistributionChart(metrics) {
+  const counts = metrics.distribucionCounts || { media: 0, aceptable: 0, deficiente: 0 };
+  const total = counts.media + counts.aceptable + counts.deficiente;
+  const radius = 48;
+  const circumference = 2 * Math.PI * radius;
+  let offset = 0;
+
+  [
+    ["distribution-media", counts.media],
+    ["distribution-aceptable", counts.aceptable],
+    ["distribution-deficiente", counts.deficiente],
+  ].forEach(([id, value]) => {
+    const circle = document.getElementById(id);
+    const length = total ? circumference * (value / total) : 0;
+    circle.style.strokeDasharray = `${length} ${circumference - length}`;
+    circle.style.strokeDashoffset = `${-offset}`;
+    offset += length;
+  });
+
+  document.getElementById("distributionCenterPct").textContent = `${percentage(counts.aceptable, total).toFixed(1)}%`;
+  document.getElementById("distributionCount").textContent = `${counts.aceptable} / ${total}`;
 }
 
 function renderRankingList(containerId, rankingData, detailedData, verdict) {

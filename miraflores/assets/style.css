@@ -413,6 +413,10 @@ select {
   grid-template-columns: repeat(4, minmax(220px, 1fr));
 }
 
+.rings-grid-five {
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+}
+
 .ring-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -469,6 +473,10 @@ select {
   stroke: var(--accent4);
 }
 
+.ring-fill.distribucion {
+  stroke: var(--accent5);
+}
+
 .ring-center {
   position: absolute;
   inset: 0;
@@ -497,6 +505,24 @@ select {
 .ring-sub {
   font-size: 12px;
   color: var(--muted);
+}
+
+.distribution-slice {
+  stroke-dasharray: 0 301.59;
+  stroke-dashoffset: 0;
+  stroke-linecap: butt;
+}
+
+.distribution-slice.media {
+  stroke: #e0c064;
+}
+
+.distribution-slice.aceptable {
+  stroke: #1f7a5a;
+}
+
+.distribution-slice.deficiente {
+  stroke: #b44848;
 }
 
 .ranking-grid {
