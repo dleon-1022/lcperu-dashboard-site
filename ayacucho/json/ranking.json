@@ -2,46 +2,58 @@
   "csv_name": "LCPERU - Ayacucho.csv",
   "total_source_images": 3,
   "total_pizzas_detected": 3,
-  "average_score": 26.67,
+  "average_score": 74.67,
+  "pizza_type_counts": {
+    "peperonni": 1,
+    "queso": 0,
+    "especiales": 2,
+    "desconocido": 0
+  },
   "ranking": [
     {
       "rank": 1,
-      "crop_image": "crops/LCPERU - Ayacucho_img_0013_crop_01.jpg",
-      "score": 50,
-      "veredicto": "FAIL",
+      "crop_image": "crops/LCPERU - Ayacucho_img_0001_crop_01.jpg",
+      "score": 100,
+      "veredicto": "PASS",
       "burbuja": "no",
-      "grasa": "si",
+      "grasa": "no_aplica",
       "bordes_sucios": "si",
-      "horneado": "alto",
-      "distribucion": "deficiente",
-      "fecha": "2026-05-04",
-      "locacion": "Ayacucho"
+      "horneado": "no_aplica",
+      "distribucion": "no_aplica",
+      "fecha": "2026-05-12",
+      "locacion": "Ayacucho",
+      "tipo_pizza": "especiales",
+      "tipo_pizza_confidence": 0.6805
     },
     {
       "rank": 2,
       "crop_image": "crops/LCPERU - Ayacucho_img_0006_crop_01.jpg",
-      "score": 15,
+      "score": 69,
       "veredicto": "FAIL",
       "burbuja": "si",
+      "grasa": "no_aplica",
+      "bordes_sucios": "si",
+      "horneado": "no_aplica",
+      "distribucion": "no_aplica",
+      "fecha": "2026-05-15",
+      "locacion": "Ayacucho",
+      "tipo_pizza": "especiales",
+      "tipo_pizza_confidence": 0.6028
+    },
+    {
+      "rank": 3,
+      "crop_image": "crops/LCPERU - Ayacucho_img_0000_crop_01.jpg",
+      "score": 55,
+      "veredicto": "FAIL",
+      "burbuja": "no",
       "grasa": "si",
       "bordes_sucios": "si",
       "horneado": "bajo",
       "distribucion": "deficiente",
-      "fecha": "2026-05-03",
-      "locacion": "Ayacucho"
-    },
-    {
-      "rank": 3,
-      "crop_image": "crops/LCPERU - Ayacucho_img_0012_crop_01.jpg",
-      "score": 15,
-      "veredicto": "FAIL",
-      "burbuja": "si",
-      "grasa": "si",
-      "bordes_sucios": "si",
-      "horneado": "alto",
-      "distribucion": "deficiente",
-      "fecha": "2026-05-04",
-      "locacion": "Ayacucho"
+      "fecha": "2026-05-12",
+      "locacion": "Ayacucho",
+      "tipo_pizza": "peperonni",
+      "tipo_pizza_confidence": 0.6187
     }
   ]
 }
