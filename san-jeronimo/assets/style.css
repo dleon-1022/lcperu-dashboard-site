@@ -413,6 +413,10 @@ select {
   grid-template-columns: repeat(4, minmax(220px, 1fr));
 }
 
+.rings-grid-five {
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+}
+
 .ring-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -467,6 +471,10 @@ select {
 
 .ring-fill.horneado {
   stroke: var(--accent4);
+}
+
+.ring-fill.distribucion {
+  stroke: var(--accent5);
 }
 
 .ring-center {
